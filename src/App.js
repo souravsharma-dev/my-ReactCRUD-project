@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import 'remixicon/fonts/remixicon.css'
+import './App.css'
 
 const App = () => {
 
@@ -24,18 +25,112 @@ const [rightdrawer, setRightDrawer] = useState(-450)
         padding: '16px',
       }}>CRUD App</h1>
 
-      <table>
+      <table className="table">
         <thead>
-          <th>
-            Name 
-          </th>
-          <th>
-            Email
-            </th>
-            <th>
-            Phone
-            </th>
+          <tr>
+          <th> Name </th>
+          <th> Email </th>
+          <th> Phone </th>
+          <th> Subject  </th>
+          <th> Actions </th>
+          </tr>
         </thead>
+
+        <tbody>
+
+          <tr>
+            <td> John Doe </td>
+            <td> RogerFing@gmail.com </td>
+            <td> 1234567890 </td>
+            <td> Maths </td>
+            <td style={{
+              
+            }}> 
+              <button style={{
+                background: 'orange',
+                color: 'white',
+                borderRadius: '5px',
+                marginRight: '8px'
+              }}><i class="ri-add-line"></i></button> 
+              <button style={{
+                background: 'green',
+                color: 'white',
+                borderRadius: '5px'
+              }}><i class="ri-subtract-fill"></i></button>
+            </td>
+          </tr>
+
+           
+           <tr>
+            <td> John Doe </td>
+            <td> RogerFing@gmail.com </td>
+            <td> 1234567890 </td>
+            <td> Maths </td>
+            <td style={{
+              
+            }}> 
+              <button style={{
+                background: 'orange',
+                color: 'white',
+                borderRadius: '5px',
+                marginRight: '8px'
+              }}><i class="ri-add-line"></i></button> 
+              <button style={{
+                background: 'green',
+                color: 'white',
+                borderRadius: '5px'
+              }}><i class="ri-subtract-fill"></i></button>
+            </td>
+          </tr>
+
+ 
+          <tr>
+            <td> John Doe </td>
+            <td> RogerFing@gmail.com </td>
+            <td> 1234567890 </td>
+            <td> Maths </td>
+            <td style={{
+              
+            }}> 
+              <button style={{
+                background: 'orange',
+                color: 'white',
+                borderRadius: '5px',
+                marginRight: '8px'
+              }}><i class="ri-add-line"></i></button> 
+              <button style={{
+                background: 'green',
+                color: 'white',
+                borderRadius: '5px'
+              }}><i class="ri-subtract-fill"></i></button>
+            </td>
+          </tr>
+
+ 
+           <tr>
+            <td> John Doe </td>
+            <td> RogerFing@gmail.com </td>
+            <td> 1234567890 </td>
+            <td> Maths </td>
+            <td style={{
+              
+            }}> 
+              <button style={{
+                background: 'orange',
+                color: 'white',
+                borderRadius: '5px',
+                marginRight: '8px'
+              }}><i class="ri-add-line"></i></button> 
+              <button style={{
+                background: 'green',
+                color: 'white',
+                borderRadius: '5px'
+              }}><i class="ri-subtract-fill"></i></button>
+            </td>
+          </tr>
+
+
+        </tbody>
       </table>
 
       <button onClick={handleSubmit} style={{
@@ -53,7 +148,7 @@ const [rightdrawer, setRightDrawer] = useState(-450)
         top: "0px",
         right: rightdrawer,
         padding: '20px',
-        background: "lightblue",
+        background: "white",
         width: 450,
         height: '100%',
         boxShadow: '0 0 40px rgba(0,0,0,0.4)',
@@ -76,8 +171,39 @@ const [rightdrawer, setRightDrawer] = useState(-450)
           gap: '20px',
           padding: '20px',
         }}>
-          <input type='text' placeholder='Name'></input>
-          <input type='email' placeholder='Enter Email'></input>
+          <input type='text' placeholder='Name' style={{
+            padding: '8px',
+            border: '2px solid grey',
+            borderRadius: '4px'
+          }}></input>
+          <input type='email' placeholder='Enter Email' style={{
+            padding: '8px',
+            border: '2px solid grey',
+            borderRadius: '4px'
+          }}></input>
+          <input type='tel' placeholder='Enter Phone' style={{
+            padding: '8px',
+            border: '2px solid grey',
+            borderRadius: '4px'
+          }}></input>
+          <input type='text' placeholder='Subject' style={{
+            padding: '8px',
+            border: '2px solid grey',
+            borderRadius: '4px'
+          }}></input>
+          <input type='date' placeholder='Name' style={{
+            padding: '8px',
+            border: '2px solid grey',
+            borderRadius: '4px'
+          }}></input>
+
+          <button style={{
+            background: 'blue',
+            color: 'white',
+            padding: '10px',
+            fontWeight: 'medium',
+            borderRadius: '4px',
+          }}>Submit Form</button>
         </form>
       </aside>
     </div>
