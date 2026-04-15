@@ -22,7 +22,21 @@ const [rightdrawer, setRightDrawer] = useState(-450)
       <h1 style={{
         textAlign: 'center',
         padding: '16px',
-      }}>CRUD APP</h1>
+      }}>CRUD App</h1>
+
+      <table>
+        <thead>
+          <th>
+            Name 
+          </th>
+          <th>
+            Email
+            </th>
+            <th>
+            Phone
+            </th>
+        </thead>
+      </table>
 
       <button onClick={handleSubmit} style={{
         background: 'purple',
@@ -55,6 +69,16 @@ const [rightdrawer, setRightDrawer] = useState(-450)
           }
           }><i class="ri-close-fill"></i></button>
         <h1>Drawer</h1>
+
+        <form style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '20px',
+          padding: '20px',
+        }}>
+          <input type='text' placeholder='Name'></input>
+          <input type='email' placeholder='Enter Email'></input>
+        </form>
       </aside>
     </div>
   )
