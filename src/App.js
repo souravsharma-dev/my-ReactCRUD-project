@@ -124,7 +124,7 @@ const [rightdrawer, setRightDrawer] = useState(-450)
               <button style={{
                 background: 'green',
                 color: 'white',
-                borderRadius: '5px'
+                borderRadius: '15px'
               }}><i class="ri-subtract-fill"></i></button>
             </td>
           </tr>
