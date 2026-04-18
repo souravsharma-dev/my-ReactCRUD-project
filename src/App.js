@@ -117,7 +117,7 @@ const [rightdrawer, setRightDrawer] = useState(-450)
             }}> 
               <button style={{
                 background: 'orange',
-                color: 'white',
+                color: 'blue',
                 borderRadius: '5px',
                 marginRight: '8px'
               }}><i class="ri-add-line"></i></button> 
