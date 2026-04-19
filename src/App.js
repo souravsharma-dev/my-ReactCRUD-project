@@ -6,6 +6,31 @@ const App = () => {
 
 const [rightdrawer, setRightDrawer] = useState(-450)
 
+const [form, setForm] = useState({
+  fullname: '',
+  email: '',
+  phone: '',
+  subject: '',
+  date: ''
+})
+
+  const handleChange = (e) => {
+    const input = e.target
+    //console.log(input.value)
+    const value = input.value
+    const name = input.name
+   // console.log(name)
+   setForm({
+     ...form,
+    [name] : value
+   })
+  }
+
+  const createStudent = (e) => {
+    e.preventDefault()
+    console.log(form)
+  }
+
   const handleSubmit = () => {
     setRightDrawer(0)
   }
@@ -60,75 +85,6 @@ const [rightdrawer, setRightDrawer] = useState(-450)
             </td>
           </tr>
 
-           
-           <tr>
-            <td> John Doe </td>
-            <td> RogerFing@gmail.com </td>
-            <td> 1234567890 </td>
-            <td> Maths </td>
-            <td style={{
-              
-            }}> 
-              <button style={{
-                background: 'orange',
-                color: 'white',
-                borderRadius: '5px',
-                marginRight: '8px'
-              }}><i class="ri-add-line"></i></button> 
-              <button style={{
-                background: 'green',
-                color: 'white',
-                borderRadius: '5px'
-              }}><i class="ri-subtract-fill"></i></button>
-            </td>
-          </tr>
-
- 
-          <tr>
-            <td> John Doe </td>
-            <td> RogerFing@gmail.com </td>
-            <td> 1234567890 </td>
-            <td> Maths </td>
-            <td style={{
-              
-            }}> 
-              <button style={{
-                background: 'orange',
-                color: 'white',
-                borderRadius: '5px',
-                marginRight: '8px'
-              }}><i class="ri-add-line"></i></button> 
-              <button style={{
-                background: 'green',
-                color: 'white',
-                borderRadius: '5px'
-              }}><i class="ri-subtract-fill"></i></button>
-            </td>
-          </tr>
-
- 
-           <tr>
-            <td> John Doe </td>
-            <td> RogerFing@gmail.com </td>
-            <td> 1234567890 </td>
-            <td> Maths </td>
-            <td style={{
-              
-            }}> 
-              <button style={{
-                background: 'orange',
-                color: 'grey',
-                borderRadius: '5px',
-                marginRight: '8px'
-              }}><i class="ri-add-line"></i></button> 
-              <button style={{
-                background: 'green',
-                color: 'white',
-                borderRadius: '15px'
-              }}><i class="ri-subtract-fill"></i></button>
-            </td>
-          </tr>
-
 
         </tbody>
       </table>
@@ -165,33 +121,63 @@ const [rightdrawer, setRightDrawer] = useState(-450)
           }><i class="ri-close-fill"></i></button>
         <h1>Drawer</h1>
 
-        <form style={{
+          {/*{JSON.stringify(form)}*/}
+        <form 
+          onSubmit={createStudent}
+          style={{
           display: 'flex',
           flexDirection: 'column',
           gap: '20px',
           padding: '20px',
         }}>
-          <input type='text' placeholder='Name' style={{
+          <input 
+          onChange = {handleChange}
+          required
+          name='fullname'
+          type='text' 
+          placeholder='Name' 
+          style={{
             padding: '8px',
             border: '2px solid grey',
             borderRadius: '4px'
           }}></input>
-          <input type='email' placeholder='Enter Email' style={{
+          <input 
+          onChange = {handleChange}
+          required
+          name='email'
+          type='email' 
+          placeholder='Enter Email' style={{
             padding: '8px',
             border: '2px solid grey',
             borderRadius: '4px'
           }}></input>
-          <input type='tel' placeholder='Enter Phone' style={{
+          <input 
+          onChange = {handleChange}
+          required
+          name='phone'
+          type='tel' 
+          placeholder='Enter Phone' 
+          style={{
             padding: '8px',
             border: '2px solid grey',
             borderRadius: '4px'
           }}></input>
-          <input type='text' placeholder='Subject' style={{
+          <input 
+          onChange = {handleChange}
+          required
+          name='subject'
+          type='text' 
+          placeholder='Subject' style={{
             padding: '8px',
             border: '2px solid grey',
             borderRadius: '4px'
           }}></input>
-          <input type='date' placeholder='Name' style={{
+          <input 
+          onChange = {handleChange}
+          required
+          name='date'
+          type='date' placeholder='Date' 
+          style={{
             padding: '8px',
             border: '2px solid grey',
             borderRadius: '4px'
