@@ -6,6 +6,8 @@ const App = () => {
 
 const [rightdrawer, setRightDrawer] = useState(-450)
 
+const [students, setStudents] = useState([])
+
 const [form, setForm] = useState({
   fullname: '',
   email: '',
@@ -28,7 +30,15 @@ const [form, setForm] = useState({
 
   const createStudent = (e) => {
     e.preventDefault()
-    console.log(form)
+    //console.log(form)
+    setStudents([...students, form])
+    setForm({
+        fullname: '',
+        email: '',
+        phone: '',
+        subject: '',
+        date: ''
+    })
   }
 
   const handleSubmit = () => {
@@ -62,12 +72,14 @@ const [form, setForm] = useState({
         </thead>
 
         <tbody>
-
-          <tr>
-            <td> John Doe </td>
-            <td> RogerFing@gmail.com </td>
-            <td> 1234567890 </td>
-            <td> Maths </td>
+        {
+         students.map((item, index)=>(
+                <tr>
+            <td> {index + 1} </td>
+            <td> {item.fullname} </td>
+            <td> {item.email} </td>
+            <td> {item.phone} </td>
+            <td> {item.subject} </td>
             <td style={{
               
             }}> 
@@ -84,7 +96,8 @@ const [form, setForm] = useState({
               }}><i class="ri-subtract-fill"></i></button>
             </td>
           </tr>
-
+         ))
+        }
 
         </tbody>
       </table>
@@ -131,6 +144,7 @@ const [form, setForm] = useState({
           padding: '20px',
         }}>
           <input 
+          value = {form.fullname}
           onChange = {handleChange}
           required
           name='fullname'
@@ -142,6 +156,7 @@ const [form, setForm] = useState({
             borderRadius: '4px'
           }}></input>
           <input 
+          value = {form.email}
           onChange = {handleChange}
           required
           name='email'
@@ -152,6 +167,7 @@ const [form, setForm] = useState({
             borderRadius: '4px'
           }}></input>
           <input 
+          value = {form.phone}
           onChange = {handleChange}
           required
           name='phone'
@@ -163,6 +179,7 @@ const [form, setForm] = useState({
             borderRadius: '4px'
           }}></input>
           <input 
+          value = {form.subject}
           onChange = {handleChange}
           required
           name='subject'
@@ -173,6 +190,7 @@ const [form, setForm] = useState({
             borderRadius: '4px'
           }}></input>
           <input 
+          value = {form.date}
           onChange = {handleChange}
           required
           name='date'
