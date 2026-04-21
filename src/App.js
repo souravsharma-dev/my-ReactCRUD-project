@@ -50,7 +50,7 @@ const [form, setForm] = useState({
   const deleteStudents = (index) => {
     alert(index)
   }
-  
+
   return (
     <div style={{
       background: '#ddd',
@@ -92,14 +92,15 @@ const [form, setForm] = useState({
               
             }}> 
               <button 
-              onClick={()=>deleteStudents(index)}
               style={{
                 background: 'orange',
                 color: 'white',
                 borderRadius: '5px',
                 marginRight: '8px'
               }}><i class="ri-add-line"></i></button> 
-              <button style={{
+              <button 
+              onClick={()=>deleteStudents(index)}
+              style={{
                 background: 'green',
                 color: 'white',
                 borderRadius: '5px'
