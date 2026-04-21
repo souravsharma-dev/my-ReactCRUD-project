@@ -33,17 +33,24 @@ const [form, setForm] = useState({
     //console.log(form)
     setStudents([...students, form])
     setForm({
+        sr: '',
         fullname: '',
         email: '',
         phone: '',
         subject: '',
         date: ''
     })
+    setRightDrawer(-450)
   }
 
   const handleSubmit = () => {
     setRightDrawer(0)
   }
+
+  const deleteStudents = (index) => {
+    alert(index)
+  }
+  
   return (
     <div style={{
       background: '#ddd',
@@ -63,6 +70,7 @@ const [form, setForm] = useState({
       <table className="table">
         <thead>
           <tr>
+          <th> Sr. No. </th>
           <th> Name </th>
           <th> Email </th>
           <th> Phone </th>
@@ -83,7 +91,9 @@ const [form, setForm] = useState({
             <td style={{
               
             }}> 
-              <button style={{
+              <button 
+              onClick={()=>deleteStudents(index)}
+              style={{
                 background: 'orange',
                 color: 'white',
                 borderRadius: '5px',
