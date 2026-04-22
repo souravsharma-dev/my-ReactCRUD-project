@@ -95,7 +95,7 @@ const [form, setForm] = useState({
               style={{
                 background: 'orange',
                 color: 'white',
-                borderRadius: '5px',
+                borderRadius: '9px',
                 marginRight: '8px'
               }}><i class="ri-add-line"></i></button> 
               <button 
