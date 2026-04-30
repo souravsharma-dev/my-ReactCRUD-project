@@ -93,17 +93,17 @@ const [form, setForm] = useState({
             }}> 
               <button 
               style={{
-                background: 'green',
-                color: 'orange',
-                borderRadius: '10px',
-                marginRight: '8px'
+                background: 'darkgreen',
+                color: 'white',
+                borderRadius: '2px',
+                marginRight: '10px'
               }}><i class="ri-add-line"></i></button> 
               <button 
               onClick={()=>deleteStudents(index)}
               style={{
-                background: 'green',
+                background: 'deeppink',
                 color: 'white',
-                borderRadius: '5px'
+                borderRadius: '2px'
               }}><i class="ri-subtract-fill"></i></button>
             </td>
           </tr>
