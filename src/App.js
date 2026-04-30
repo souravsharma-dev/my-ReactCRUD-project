@@ -4,6 +4,8 @@ import './App.css'
 
 const App = () => {
 
+const [editIndex, setEditIndex] = useState(null)
+
 const [rightdrawer, setRightDrawer] = useState(-450)
 
 const [students, setStudents] = useState([])
@@ -48,7 +50,19 @@ const [form, setForm] = useState({
   }
 
   const deleteStudents = (index) => {
-    alert(index)
+    const backup = [...students]
+    backup.splice(index, 1)
+    setStudents(backup)
+  }
+
+  const editStudents = (item) => {
+    setEditIndex(item)
+    setRightDrawer(0)
+    setForm(item)
+  }
+
+  const saveStudent = () => {
+    alert('save student')
   }
 
   return (
@@ -92,6 +106,7 @@ const [form, setForm] = useState({
               
             }}> 
               <button 
+              onClick={()=>editStudents(item)}
               style={{
                 background: 'darkgreen',
                 color: 'white',
@@ -147,7 +162,7 @@ const [form, setForm] = useState({
 
           {/*{JSON.stringify(form)}*/}
         <form 
-          onSubmit={createStudent}
+          onSubmit={editIndex === null ? createStudent : saveStudent}
           style={{
           display: 'flex',
           flexDirection: 'column',
@@ -211,7 +226,8 @@ const [form, setForm] = useState({
             border: '2px solid grey',
             borderRadius: '4px'
           }}></input>
-
+            {
+            editIndex === null ?
           <button style={{
             background: 'blue',
             color: 'white',
@@ -219,6 +235,16 @@ const [form, setForm] = useState({
             fontWeight: 'medium',
             borderRadius: '4px',
           }}>Submit Form</button>
+          :
+          <button style={{
+            background: 'deeppink',
+            color: 'white',
+            padding: '10px',
+            fontWeight: 'medium',
+            borderRadius: '4px',
+          }}>Save</button>
+          }
+
         </form>
       </aside>
     </div>
