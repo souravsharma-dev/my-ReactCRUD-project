@@ -61,8 +61,10 @@ const [form, setForm] = useState({
     setForm(item)
   }
 
-  const saveStudent = () => {
+  const saveStudent = (e) => {
     alert('save student')
+    e.preventDefault()
+    const backup = [...students]
   }
 
   return (
