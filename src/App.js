@@ -79,7 +79,7 @@ const [form, setForm] = useState({
         width: '70%',
         background: 'white',
         margin: '32px auto',
-        padding: '20px',
+        padding: '22px',
       }}>
       <h1 style={{
         textAlign: 'center',
