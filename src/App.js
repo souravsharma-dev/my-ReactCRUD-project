@@ -83,7 +83,7 @@ const [form, setForm] = useState({
       }}>
       <h1 style={{
         textAlign: 'center',
-        padding: '22px',
+        padding: '20px',
       }}>CRUD App Design</h1>S
 
       <table className="table">
