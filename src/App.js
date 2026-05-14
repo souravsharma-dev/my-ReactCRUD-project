@@ -51,17 +51,19 @@ const [form, setForm] = useState(model)
     setStudents(backup)
   }
 
-  const editStudents = (item) => {
-    setEditIndex(item)
+  const editStudents = (index) => {
     setRightDrawer(0)
-    setForm(item)
+    setForm(students[index])
+      setEditIndex(index)
   }
 
   const saveStudent = (e) => {
    // alert('save student')
     e.preventDefault()
     const backup = [...students]
+    //console.log(backup)
     backup[editIndex] = form
+    //console.log(backup)
     setStudents(backup)
     setForm(model)
     setEditIndex(null)
@@ -81,7 +83,17 @@ const [form, setForm] = useState(model)
       <h1 style={{
         textAlign: 'center',
         padding: '20px',
-      }}>CRUD App Design</h1>S
+      }}>CRUD App Design</h1>
+
+       <button onClick={handleSubmit} style={{
+        background: 'purple',
+        color: 'white',
+        padding: '10px',
+        fontWeight: 'bold',
+        alignItems: "center"
+      }}><i style={{
+        marginRight: '8px'
+      }} class="ri-map-pin-user-fill"></i> Submit Form</button>
 
       <table className="table">
         <thead>
@@ -108,7 +120,7 @@ const [form, setForm] = useState(model)
               
             }}> 
               <button 
-              onClick={()=>editStudents(item)}
+              onClick={()=>editStudents(index)}
               style={{
                 background: 'darkgreen',
                 color: 'white',
@@ -130,15 +142,7 @@ const [form, setForm] = useState(model)
         </tbody>
       </table>
 
-      <button onClick={handleSubmit} style={{
-        background: 'purple',
-        color: 'white',
-        padding: '10px',
-        fontWeight: 'bold',
-        alignItems: "center"
-      }}><i style={{
-        marginRight: '8px'
-      }} class="ri-map-pin-user-fill"></i> Submit Form</button>
+     
       </div>
       <aside style={{
         position: "fixed",
