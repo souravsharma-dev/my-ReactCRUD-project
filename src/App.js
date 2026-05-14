@@ -4,19 +4,22 @@ import './App.css'
 
 const App = () => {
 
+const model ={
+        sr: '',
+        fullname: '',
+        email: '',
+        phone: '',
+        subject: '',
+        date: ''
+} 
+
 const [editIndex, setEditIndex] = useState(null)
 
 const [rightdrawer, setRightDrawer] = useState(-450)
 
 const [students, setStudents] = useState([])
 
-const [form, setForm] = useState({
-  fullname: '',
-  email: '',
-  phone: '',
-  subject: '',
-  date: ''
-})
+const [form, setForm] = useState(model)
 
   const handleChange = (e) => {
     const input = e.target
@@ -34,14 +37,7 @@ const [form, setForm] = useState({
     e.preventDefault()
     //console.log(form)
     setStudents([...students, form])
-    setForm({
-        sr: '',
-        fullname: '',
-        email: '',
-        phone: '',
-        subject: '',
-        date: ''
-    })
+    setForm(model)
     setRightDrawer(-450)
   }
 
@@ -62,11 +58,12 @@ const [form, setForm] = useState({
   }
 
   const saveStudent = (e) => {
-    alert('save student')
+   // alert('save student')
     e.preventDefault()
     const backup = [...students]
-    backup[students.indexOf(editIndex)] = form
+    backup[editIndex] = form
     setStudents(backup)
+    setForm(model)
     setEditIndex(null)
   }
 
